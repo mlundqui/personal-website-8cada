@@ -6,14 +6,16 @@ export const metadata = {
 const posts = [
   {
     title: 'Welcome to My Blog',
-    date: 'July 19, 2025',
+    date: 'July 17th, 2025',
     description: 'This is my first blog post. I’ll be sharing thoughts on dev life, projects, and tips.',
-  },
+    link: "/"
+},
   {
     title: 'How I Built This Website',
-    date: 'July 10, 2025',
+    date: 'July 10th, 2025',
     description: 'A breakdown of the tech stack, structure, and deployment using Next.js and Netlify.',
-  },
+    link: "/",
+},
 ];
 
 export default async function Page() {
@@ -25,8 +27,9 @@ export default async function Page() {
         {posts.map((post, index) => (
           <article key={index} className="border-b pb-6">
             <h2 className="text-2xl font-semibold">{post.title}</h2>
-            <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-            <p className="text-gray-700">{post.description}</p>
+            <h3 className="text-sm text-gray-500 mb-2">{post.date}</h3>
+            <h3 className="text-white-700">{post.description}</h3>
+            <p className='mb-2'><a href={post.link}> {"Click Here"}</a></p>
           </article>
         ))}
       </div>
